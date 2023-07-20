@@ -256,6 +256,74 @@ body.lock {
   z-index: -1;
 }
 
+.label_bubbles {
+  font-family: "RightGrotesk";
+  font-size: 1.6875rem;
+  font-weight: 900;
+  background: #FCC000;
+  width: -moz-min-content;
+  width: min-content;
+  text-align: center;
+  color: #fff;
+}
+
+.label_bubbles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-35%, -35%);
+  height: 90%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #FCC000;
+  z-index: -1;
+}
+
+.label_bubbles::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(35%, -35%);
+  height: 90%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #FCC000;
+  z-index: -1;
+}
+
+.label_bubbles span {
+  display: block;
+  position: relative;
+}
+
+.label_bubbles span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-35%, 35%);
+  height: 90%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #FCC000;
+  z-index: -1;
+}
+
+.label_bubbles span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(35%, 35%);
+  height: 90%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #FCC000;
+  z-index: -1;
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -548,6 +616,7 @@ body.lock {
   flex: 1 1 50%;
   border-radius: 30px;
   background: rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 .main__photo {
@@ -590,6 +659,37 @@ body.lock {
 
 .main__pagination .swiper-pagination-bullet:not(:last-child) {
   margin-right: 12px;
+}
+
+.main__label.label_sticker {
+  position: absolute;
+  right: 40px;
+  top: 40%;
+  transform: translate(0, -50%);
+  background: #fff;
+}
+
+.main__label.label_sticker::before,
+.main__label.label_sticker::after {
+  background: #fff;
+}
+
+.main__label.label_green {
+  position: absolute;
+  left: 60%;
+  top: 20px;
+  transform: rotate(15deg);
+  font-family: "RightGrotesk";
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.main__label.label_orange {
+  position: absolute;
+  right: 80px;
+  bottom: 10%;
+  color: #fff;
+  transform: rotate(30deg) translate(0, -100%);
 }
 
 .about__body {
@@ -658,6 +758,7 @@ body.lock {
 .how {
   border-radius: 50px;
   background: #CBE9DF;
+  margin: 0 20px;
 }
 
 .how__body {
@@ -771,6 +872,26 @@ body.lock {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.block-how__label.label_sticker {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+  transform: rotate(15deg) translate(0, -50%);
+}
+
+.block-how__label.label_sticker::before,
+.block-how__label.label_sticker::after {
+  background: #fff;
+}
+
+.block-how__label.label_bubbles {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: rotate(-30deg) translate(-50%, 0);
 }
 
 .why__body {
@@ -1064,6 +1185,10 @@ body.lock {
   align-items: flex-start;
 }
 
+.begin__label {
+  transition: all 0.1s linear;
+}
+
 .begin__label.label_green {
   margin-bottom: 50px;
   transform: rotate(10deg);
@@ -1081,6 +1206,7 @@ body.lock {
   position: relative;
   align-self: center;
   margin-bottom: 20px;
+  transition: all 0.1s linear;
 }
 
 .begin__arrow img {
@@ -1280,6 +1406,147 @@ body.lock {
   font-size: 1.25rem;
   font-weight: 700;
   transition: all 0.2s linear;
+}
+
+.reviews__body {
+  padding: 50px 0;
+  position: relative;
+}
+
+.reviews__title {
+  margin-bottom: 60px;
+  margin-right: 250px;
+  position: relative;
+  z-index: 1;
+}
+
+.reviews__block {
+  position: relative;
+  padding: 0 40px;
+}
+
+.reviews__slider {
+  overflow: hidden;
+}
+
+.reviews__navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+
+.reviews__label.label_orange {
+  position: absolute;
+  right: 100px;
+  top: 50px;
+  transform: rotate(-15deg);
+  color: #fff;
+}
+
+.reviews__label.label_sticker {
+  position: absolute;
+  right: 250px;
+  top: 120px;
+  background: #B9ECDF;
+  transform: rotate(15deg);
+}
+
+.reviews__label.label_sticker::before,
+.reviews__label.label_sticker::after {
+  background: #B9ECDF;
+}
+
+.reviews__label.label_bubbles {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  transform: rotate(-15deg);
+}
+
+.item-reviews__header {
+  background: #F6F6F6;
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+}
+
+.item-reviews__back {
+  color: #037EE5;
+  font-size: 1.0625rem;
+  display: flex;
+  align-items: center;
+}
+
+.item-reviews__back svg {
+  width: 24px;
+  height: 24px;
+  stroke: #037EE5;
+  stroke-width: 2px;
+}
+
+.item-reviews__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  margin: 0 10px;
+}
+
+.item-reviews__name {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.item-reviews__status {
+  font-size: 0.8125rem;
+  color: #787878;
+}
+
+.item-reviews__photo {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-reviews__photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.no-webp .item-reviews__body{
+  background: url("../img/reviews/bg.png") center/cover no-repeat; }
+
+.item-reviews__body {
+  padding: 10px;
+}
+
+.item-reviews__message {
+  display: flex;
+  align-items: flex-end;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  width: 80%;
+}
+
+.item-reviews__text {
+  font-size: 1.0625rem;
+}
+
+.item-reviews__time {
+  font-size: 0.6875rem;
+  color: #8E8E93;
+  margin-left: 10px;
 }
 
 .faq__body {
@@ -2119,6 +2386,30 @@ body.lock {
     font-size: calc(1rem + 4 * (100vw - 20rem) / 1600);
   }
 
+  .reviews__body {
+    padding: calc(20px + 30 * (100vw - 320px) / 1600) 0;
+  }
+
+  .reviews__title {
+    margin-bottom: calc(20px + 40 * (100vw - 320px) / 1600);
+  }
+
+  .item-reviews__back {
+    font-size: calc(0.875rem + 3 * (100vw - 20rem) / 1600);
+  }
+
+  .item-reviews__name {
+    font-size: calc(0.9375rem + 2 * (100vw - 20rem) / 1600);
+  }
+
+  .item-reviews__message {
+    width: calc(95% + -15 * (100vw - 320px) / 1600);
+  }
+
+  .item-reviews__text {
+    font-size: calc(0.875rem + 3 * (100vw - 20rem) / 1600);
+  }
+
   .faq__body {
     padding: calc(20px + 30 * (100vw - 320px) / 1600) 0;
   }
@@ -2278,6 +2569,10 @@ body.lock {
     width: 70%;
   }
 
+  .main__label {
+    display: none;
+  }
+
   .about__cards {
     flex-direction: column;
   }
@@ -2289,6 +2584,10 @@ body.lock {
 
   .card-about__item {
     flex: 1 1 33.333%;
+  }
+
+  .how {
+    margin: 0;
   }
 
   .block-how_group .block-how__image:nth-child(2) {
@@ -2308,6 +2607,10 @@ body.lock {
     transform: translate(-50%, -20%);
   }
 
+  .block-how__label {
+    display: none;
+  }
+
   .why__list {
     padding-left: 20px;
     padding-right: 20px;
@@ -2323,6 +2626,14 @@ body.lock {
 
   .teachers__desc {
     padding: 0 calc(20px + 20 * (100vw - 320px) / 1600);
+  }
+
+  .reviews__title {
+    margin-right: 0;
+  }
+
+  .reviews__labels {
+    display: none;
   }
 
   .faq__title {
@@ -2436,6 +2747,14 @@ body.lock {
     display: none;
   }
 
+  .reviews__block {
+    padding: 0;
+  }
+
+  .reviews__navigation {
+    display: none;
+  }
+
   .sign__body {
     flex-direction: column;
   }
@@ -2452,3 +2771,5 @@ body.lock {
 .webp .popup__content::before{ background: url(../img/popup/popup-decor.webp) 0 0/100% 100% no-repeat; }
 
 .webp .popup__content::after{ background: url(../img/popup/perehod.webp) 0 0/100% 100% no-repeat; }
+
+.webp .item-reviews__body{ background: url(../img/reviews/bg.webp) center/cover no-repeat; }
