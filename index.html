@@ -4,7 +4,7 @@
 <head>
     <title>Daily English</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230720222538">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230723215855">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -417,7 +417,7 @@
                             <h3 class="card-price__title">індивідуальні заняття</h3>
                             <div class="card-price__count">1 заняття:</div>
                             <div class="card-price__value">19 $ / 720 ₴</div>
-                            <button type="button" class="card-price__btn btn_white">
+                            <button type="button" class="card-price__btn btn_white popup-link" data-modal="sign">
                                 Обрати
                             </button>
                         </div>
@@ -425,13 +425,13 @@
                             <h3 class="card-price__title">групові заняття</h3>
                             <div class="card-price__count">1 місяць навчання (22 заняття):</div>
                             <div class="card-price__value">270 $ / 10 500 ₴</div>
-                            <button type="button" class="card-price__btn btn_white">
+                            <button type="button" class="card-price__btn btn_white popup-link" data-modal="sign">
                                 Обрати
                             </button>
                         </div>
                         <div class="price__card card-price">
                             <h3 class="card-price__title">корпоративне навчання</h3>
-                            <button type="button" class="card-price__btn btn_white">
+                            <button type="button" class="card-price__btn btn_white popup-link" data-modal="sign">
                                 Залишити заявку
                             </button>
                         </div>
@@ -1194,14 +1194,68 @@
 </footer>
     </div>
 
-    <div class="popup" id="need">
+    <div class="popup" id="sign">
     <div class="popup__wrapper">
-        <div class="popup__content">
-
+        <div class="popup__content sign">
+            <div class="sign__body">
+                <form action="#" class="sign__form">
+                    <h3 class="sign__title">Залишити заявку</h3>
+                    <div class="sign__desc">
+                        Залишіть контатні дані і ми зв'яжемося з вами та вiдповимо на всi ваші запитання
+                    </div>
+                    <div class="sign__input">
+                        <input type="text" placeholder="+38(___) ___ __ __">
+                        <div class="sign__radio radio-options">
+                            <div class="radio-options__item">
+                                <picture>
+                                    <source data-srcset="img/sign/telegram.svg" srcset="img/plug.png"
+                                        type="image/webp">
+                                    <img data-src="img/sign/telegram.svg" src="img/plug.png" alt="Image">
+                                </picture>
+                                <input type="radio" name="messanger" value="telegram">
+                            </div>
+                            <div class="radio-options__item">
+                                <picture>
+                                    <source data-srcset="img/sign/viber.svg" srcset="img/plug.png" type="image/webp">
+                                    <img data-src="img/sign/viber.svg" src="img/plug.png" alt="Image">
+                                </picture>
+                                <input type="radio" name="messanger" value="viber">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="sign__btn btn_yellow">
+                        Залишити заявку
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-    <script src="js/app.min.js?_v=20230720222538"></script>
+
+<div class="callback">
+    <div class="callback__hidden">
+        <button type="button" class="callback__telegram">
+            <img src="img/sign/telegram.svg" alt="Icon">
+        </button>
+        <button type="button" class="callback__viber">
+            <img src="img/sign/viber.svg" alt="Icon">
+        </button>
+    </div>
+    <div class="callback__btns">
+        <button type="button" class="callback__btn">
+            <svg>
+                <use href="img/icons/icons.svg#phone"></use>
+            </svg>
+        </button>
+        <button type="button" class="callback__btn">
+            <span>Обери месенджер</span>
+            <svg>
+                <use href="img/icons/icons.svg#chat"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+    <script src="js/app.min.js?_v=20230723215855"></script>
 </body>
 
 </html>

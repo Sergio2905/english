@@ -85,6 +85,22 @@ h6 {
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "RightGrotesk";
+  font-display: swap;
+  src: url("../fonts/RightGrotesk-CompactBlack.woff2") format("woff2"), url("../fonts/RightGrotesk-CompactBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RightGrotesk";
+  font-display: swap;
+  src: url("../fonts/RightGrotesk-WideMedium.woff2") format("woff2"), url("../fonts/RightGrotesk-WideMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   --app-height: 100%;
 }
@@ -145,7 +161,7 @@ body.lock {
 }
 
 .title {
-  font-family: "RightGrotesk";
+  font-family: RightGrotesk;
   font-size: 4rem;
   font-weight: 900;
 }
@@ -411,51 +427,114 @@ body.lock {
   min-height: 100vh;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .popup__content {
-  max-width: 50vw;
+  max-width: 660px;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 100%;
-  padding: 20px 30px 40px;
   position: relative;
-  transform: translate(150%, 0);
-  background: linear-gradient(181deg, #0019FF 0%, #021092 36.44%, #000E8A 100%);
   border-radius: 6px;
   transition: all 0.3s linear;
-  padding: 50px 100px;
+  background: #fff;
+  border-radius: 30px;
 }
 
-.no-webp .popup__content::before{
-  background: url("../img/popup/popup-decor.png") 0 0/100% 100% no-repeat; }
-
-.popup__content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 98%;
-  transform: translate(-50%, 0);
-  width: 100px;
-  height: 100%;
+.popup__content.sign {
+  padding: 0;
 }
 
-.no-webp .popup__content::after{
-  background: url("../img/popup/perehod.png") 0 0/100% 100% no-repeat; }
-
-.popup__content::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, 0);
-  width: 100px;
-  height: 100%;
+.popup__content.sign .sign__form {
+  border: none;
+  padding: 60px 50px;
 }
 
-.popup__close svg {
-  width: 48px;
-  height: 48px;
+.callback {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  bottom: 25px;
+  right: 25px;
+  z-index: 50;
+}
+
+.callback.active .callback__hidden {
+  pointer-events: all;
+}
+
+.callback.active .callback__viber,
+.callback.active .callback__telegram {
+  transform: scale(1);
+}
+
+.callback__btns {
+  display: flex;
+  align-items: center;
+}
+
+.callback__btn {
+  border-radius: 20px;
+  background: rgba(182, 163, 219, 0.8);
+  padding: 12px 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s linear;
+}
+
+.callback__btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.callback__btn:hover {
+  background: rgb(182, 163, 219);
+  box-shadow: 0 0 10px rgb(182, 163, 219);
+}
+
+.callback__btn svg {
+  width: 24px;
+  height: 24px;
   fill: #fff;
+}
+
+.callback__btn span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  max-width: -moz-min-content;
+  max-width: min-content;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.callback__hidden {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  pointer-events: none;
+}
+
+.callback__telegram {
+  margin-bottom: 5px;
+  transform: scale(0);
+  transition: all 0.2s linear 0.1s;
+}
+
+.callback__telegram:hover {
+  transform: scale(0.9);
+}
+
+.callback__viber {
+  transform: scale(0);
+  transition: all 0.2s linear;
+}
+
+.callback__viber:hover {
+  transform: scale(0.9);
 }
 
 .header__body {
@@ -2060,21 +2139,8 @@ body.lock {
     margin-bottom: calc(15px + 20 * (100vw - 768px) / 1152);
   }
 
-  .popup__content {
-    padding: calc(15px + 35 * (100vw - 320px) / 1600) calc(15px + 85 * (100vw - 320px) / 1600);
-  }
-
-  .popup__content::before {
-    width: calc(30px + 70 * (100vw - 320px) / 1600);
-  }
-
-  .popup__content::after {
-    width: calc(30px + 70 * (100vw - 320px) / 1600);
-  }
-
-  .popup__close svg {
-    width: calc(24px + 24 * (100vw - 320px) / 1600);
-    height: calc(24px + 24 * (100vw - 320px) / 1600);
+  .popup__content.sign .sign__form {
+    padding: calc(30px + 30 * (100vw - 320px) / 1600) calc(10px + 40 * (100vw - 320px) / 1600);
   }
 
   .header__body {
@@ -2486,12 +2552,6 @@ body.lock {
   }
 }
 
-@media (max-width: 992px) {
-  .popup__content {
-    max-width: 75%;
-  }
-}
-
 @media (max-width: 768px) {
   .popup__logo {
     width: 150px;
@@ -2650,18 +2710,6 @@ body.lock {
 }
 
 @media (max-width: 576px) {
-  .popup__content {
-    max-width: 100%;
-  }
-
-  .popup__content::before {
-    display: none;
-  }
-
-  .popup__content::after {
-    display: none;
-  }
-
   .card-about__list {
     flex-direction: column;
     gap: 0;
@@ -2767,9 +2815,5 @@ body.lock {
     border-radius: 0 0 30px 30px;
   }
 }
-
-.webp .popup__content::before{ background: url(../img/popup/popup-decor.webp) 0 0/100% 100% no-repeat; }
-
-.webp .popup__content::after{ background: url(../img/popup/perehod.webp) 0 0/100% 100% no-repeat; }
 
 .webp .item-reviews__body{ background: url(../img/reviews/bg.webp) center/cover no-repeat; }
