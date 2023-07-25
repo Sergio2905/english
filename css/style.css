@@ -340,6 +340,34 @@ body.lock {
   z-index: -1;
 }
 
+.label_radial {
+  bottom: -100px;
+  right: 0;
+  font-family: "RightGrotesk";
+  font-size: 1.875rem;
+  font-weight: 900;
+}
+
+.label_radial span {
+  background: #B9ECDF;
+  display: inline-block;
+  width: 25px;
+  position: absolute;
+  transform: translate(-12.5px, 0px) rotate(var(--rot)) translate(0, -105px);
+}
+
+.radial svg {
+  fill: none;
+}
+
+.radial__text {
+  font-family: "RightGrotesk";
+  font-size: 1.875rem;
+  font-weight: 900;
+  fill: #000;
+  transform: translate(23%, -4%) rotate(22deg);
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -463,6 +491,14 @@ body.lock {
   z-index: 50;
 }
 
+.callback.active .callback__btn span:nth-of-type(1) {
+  display: none;
+}
+
+.callback.active .callback__btn span:nth-of-type(2) {
+  display: block;
+}
+
 .callback.active .callback__hidden {
   pointer-events: all;
 }
@@ -510,10 +546,13 @@ body.lock {
 .callback__btn span {
   font-size: 0.8125rem;
   font-weight: 500;
-  max-width: -moz-min-content;
-  max-width: min-content;
   margin-right: 20px;
   text-align: left;
+  line-height: 1.5;
+}
+
+.callback__btn span:nth-of-type(2) {
+  display: none;
 }
 
 .callback__hidden {
@@ -550,6 +589,40 @@ body.lock {
 .callback__viber img {
   width: 100%;
   height: 100%;
+}
+
+.done {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+}
+
+.done__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.done__message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.done__btn {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
 }
 
 .header__body {
@@ -625,6 +698,7 @@ body.lock {
 
 .header__btn {
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .menu__body {
@@ -665,6 +739,10 @@ body.lock {
   transition: all 0.2s linear;
 }
 
+.main {
+  margin-top: 90px;
+}
+
 .main__body {
   padding: 40px 0;
 }
@@ -677,6 +755,145 @@ body.lock {
 .main__slide {
   width: 100%;
   height: 100%;
+}
+
+.main__slide_one .main__label {
+  position: absolute;
+}
+
+.main__slide_one .main__label.label_sticker {
+  position: absolute;
+  right: 40px;
+  top: 40%;
+  transform: translate(0, -50%);
+  background: #fff;
+}
+
+.main__slide_one .main__label.label_sticker::before,
+.main__slide_one .main__label.label_sticker::after {
+  background: #fff;
+}
+
+.main__slide_one .main__label.label_green {
+  position: absolute;
+  left: 60%;
+  top: 20px;
+  transform: rotate(15deg);
+  font-family: "RightGrotesk";
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.main__slide_one .main__label.label_orange {
+  position: absolute;
+  right: 80px;
+  bottom: 10%;
+  color: #fff;
+  transform: rotate(30deg) translate(0, -100%);
+}
+
+.main__slide_two .main__label {
+  position: absolute;
+}
+
+.main__slide_two .main__label.label_bubbles {
+  position: absolute;
+  left: 60px;
+  top: 10px;
+  z-index: 1;
+  color: #000;
+  transform: rotate(-30deg);
+}
+
+.main__slide_two .main__label.label_orange {
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  color: #fff;
+  width: -moz-min-content;
+  width: min-content;
+  transform: rotate(30deg);
+}
+
+.main__slide_two .main__label.label_orange::after {
+  display: none;
+}
+
+.main__slide_three .main__label {
+  position: absolute;
+}
+
+.main__slide_three .main__label.label_sticker {
+  position: absolute;
+  left: 120px;
+  bottom: 80px;
+  transform: rotate(20deg);
+  background: #fff;
+}
+
+.main__slide_three .main__label.label_sticker::before,
+.main__slide_three .main__label.label_sticker::after {
+  background: #fff;
+}
+
+.main__slide_three .main__label.label_green {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  transform: rotate(-15deg) translate(-80%, 0);
+  font-family: "RightGrotesk";
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.main__slide_three .main__label.label_orange {
+  position: absolute;
+  right: 80px;
+  bottom: 10%;
+  color: #fff;
+  transform: rotate(-20deg) translate(0, -100%);
+}
+
+.main__slide_four .main__label {
+  position: absolute;
+}
+
+.main__slide_four .main__label.label_orange {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #fff;
+  transform: translate(-30%, 0) rotate(15deg);
+}
+
+.main__slide_four .main__label.label_orange::after {
+  bottom: 99%;
+  right: 20px;
+  left: unset;
+  border-bottom: 17px solid #FF790B;
+  border-left: 20px solid transparent;
+  border-right: unset;
+}
+
+.main__slide_five .main__label {
+  position: absolute;
+}
+
+.main__slide_five .main__label.label_sticker {
+  position: absolute;
+  right: 60px;
+  top: 30px;
+  z-index: 1;
+  color: #000;
+  transform: rotate(-20deg);
+}
+
+.main__slide_five .main__label.label_orange {
+  position: absolute;
+  left: 40px;
+  bottom: 80px;
+  color: #fff;
+  transform: rotate(15deg);
 }
 
 .main__item {
@@ -704,6 +921,7 @@ body.lock {
 
 .main__btn {
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .main__image {
@@ -753,37 +971,6 @@ body.lock {
 
 .main__pagination .swiper-pagination-bullet:not(:last-child) {
   margin-right: 12px;
-}
-
-.main__label.label_sticker {
-  position: absolute;
-  right: 40px;
-  top: 40%;
-  transform: translate(0, -50%);
-  background: #fff;
-}
-
-.main__label.label_sticker::before,
-.main__label.label_sticker::after {
-  background: #fff;
-}
-
-.main__label.label_green {
-  position: absolute;
-  left: 60%;
-  top: 20px;
-  transform: rotate(15deg);
-  font-family: "RightGrotesk";
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.main__label.label_orange {
-  position: absolute;
-  right: 80px;
-  bottom: 10%;
-  color: #fff;
-  transform: rotate(30deg) translate(0, -100%);
 }
 
 .about__body {
@@ -919,6 +1106,7 @@ body.lock {
 
 .block-how__btn {
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .block-how__images {
@@ -1228,6 +1416,7 @@ body.lock {
 
 .card-price__btn {
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .begin__body {
@@ -1316,6 +1505,7 @@ body.lock {
 .begin__btn {
   align-self: center;
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .next-begin__title {
@@ -1667,14 +1857,17 @@ body.lock {
 }
 
 .faq__question {
+  width: 100%;
   font-size: 1.5rem;
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   text-align: left;
 }
 
 .faq__question svg {
+  min-width: 32px;
   width: 32px;
   height: 32px;
   stroke: #89B6C5;
@@ -1818,6 +2011,7 @@ body.lock {
   width: 100%;
   margin: 0 auto;
   font-size: 1.125rem;
+  font-weight: 600;
 }
 
 .radio-options__item {
@@ -2158,6 +2352,20 @@ body.lock {
     padding: calc(30px + 30 * (100vw - 320px) / 1600) calc(10px + 40 * (100vw - 320px) / 1600);
   }
 
+  .done {
+    padding: 30px calc(15px + 15 * (100vw - 320px) / 1600);
+  }
+
+  .done__message {
+    font-size: calc(1.125rem + 6 * (100vw - 20rem) / 1600);
+    margin-bottom: calc(15px + 15 * (100vw - 320px) / 1600);
+  }
+
+  .done__btn {
+    padding: calc(10px + 10 * (100vw - 320px) / 1600) calc(15px + 15 * (100vw - 320px) / 1600);
+    font-size: calc(1rem + 2 * (100vw - 20rem) / 1600);
+  }
+
   .header__body {
     padding: calc(10px + 12 * (100vw - 320px) / 1600) 0;
   }
@@ -2175,6 +2383,10 @@ body.lock {
 
   .menu__body {
     margin-right: calc(10px + 50 * (100vw - 320px) / 1600);
+  }
+
+  .main {
+    margin-top: calc(80px + 10 * (100vw - 320px) / 1600);
   }
 
   .main__body {
@@ -2534,7 +2746,7 @@ body.lock {
   }
 
   .sign__btn {
-    padding: calc(10px + 10 * (100vw - 320px) / 1600) calc(15px + 15 * (100vw - 320px) / 1600);
+    padding: calc(15px + 5 * (100vw - 320px) / 1600) calc(20px + 10 * (100vw - 320px) / 1600);
     font-size: calc(1rem + 2 * (100vw - 20rem) / 1600);
   }
 
@@ -2625,6 +2837,26 @@ body.lock {
     color: #fff;
   }
 
+  .main__slide_one .main__label {
+    display: none;
+  }
+
+  .main__slide_two .main__label {
+    display: none;
+  }
+
+  .main__slide_three .main__label {
+    display: none;
+  }
+
+  .main__slide_four .main__label {
+    display: none;
+  }
+
+  .main__slide_five .main__label {
+    display: none;
+  }
+
   .main__item {
     flex-direction: column;
     gap: 10px;
@@ -2642,10 +2874,6 @@ body.lock {
 
   .main__image {
     width: 70%;
-  }
-
-  .main__label {
-    display: none;
   }
 
   .about__cards {
@@ -2828,6 +3056,12 @@ body.lock {
 
   .sign__form {
     border-radius: 0 0 30px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price__cards {
+    flex-direction: column;
   }
 }
 
